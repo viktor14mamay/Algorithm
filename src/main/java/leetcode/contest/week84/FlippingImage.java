@@ -1,4 +1,4 @@
-package leetcode.week84;
+package leetcode.contest.week84;
 
 public class FlippingImage {
 

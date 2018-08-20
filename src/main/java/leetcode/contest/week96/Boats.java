@@ -1,4 +1,4 @@
-package leetcode.week96;
+package leetcode.contest.week96;
 
 public class Boats {
 
