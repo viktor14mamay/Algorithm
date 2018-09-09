@@ -34,7 +34,7 @@ public class FileTemplate {
 		}
 	}
 
-	private static int[] readArray(Scanner scanner) {
+	private static int[] readIntegerArray(Scanner scanner) {
 		String tokens[] = scanner.nextLine().replaceAll("\\[|\\]", "").split(",");
 		int len = tokens.length;
 		int res[] = new int[len];

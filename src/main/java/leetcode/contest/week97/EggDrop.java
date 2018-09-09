@@ -8,8 +8,52 @@ import java.util.Scanner;
 
 public class EggDrop {
 
-	public static int superEggDrop(int K, int N) {
+	static int arr[][];
 
+	public static int superEggDrop(int k, int n) {
+		oper = 0;
+		if (k == 1)
+			return n;
+		if (n == 1)
+			return 1;
+		arr = new int[k + 1][n + 1];
+		int ans = dp(k, n);
+		return ans;
+
+	}
+
+	static int oper;
+
+	public static int dp(int k, int n) {
+		oper++;
+		if (arr[k][n] != 0) {
+			return arr[k][n];
+		}
+		int ans;
+		if (n == 0) {
+			ans = 0;
+		} else if (k == 1) {
+			ans = n;
+		} else {
+			int low = 1, high = n;
+			while (low + 1 < high) {
+				int x = (low + high) / 2;
+				int t1 = dp(k - 1, x);
+				int t2 = dp(k, n - x);
+				if (t1 < t2) {
+					low = x;
+				} else if (t1 > t2) {
+					high = x;
+				} else {
+					low = high = x;
+				}
+			}
+
+			ans = 1 + Math.min(Math.max(dp(k - 1, low - 1), dp(k, n - low)),
+					Math.max(dp(k - 1, high - 1), dp(k, n - high)));
+		}
+		arr[k][n] = ans;
+		return ans;
 	}
 
 	private static final String INPUT_FILE = "input.txt";
@@ -26,8 +70,10 @@ public class EggDrop {
 				int n = scanner.nextInt();
 
 				writer.println(superEggDrop(k, n));
+				System.out.println(oper++);
 			}
 			scanner.close();
 		}
+		
 	}
 }
