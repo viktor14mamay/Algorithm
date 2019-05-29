@@ -9,7 +9,7 @@ public class Goodland {
 
 	// Complete the pylons function below.
 	static int pylons(int k, int[] arr) {
-		
+		return 0;
 	}
 
 	private static final Scanner scanner = new Scanner(System.in);

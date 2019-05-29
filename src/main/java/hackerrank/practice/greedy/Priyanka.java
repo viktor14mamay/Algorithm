@@ -10,7 +10,7 @@ public class Priyanka {
 	// Complete the toys function below.
     static int toys(int[] w) {
 
-
+    	return 0;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
