@@ -9,10 +9,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileTemplate {
-
-	public static int solve(int[][] arr) {
-
-	}
 	
 	private static final String INPUT_FILE = "input.txt";
 	private static final String OUTPUT_FILE = "output.txt";
@@ -28,7 +24,7 @@ public class FileTemplate {
 
 				int matrix[][] = readMatrixOneLined(scanner);
 
-				writer.println(solve(A));
+				writer.println();
 			}
 			scanner.close();
 		}

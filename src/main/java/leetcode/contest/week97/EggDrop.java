@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class EggDrop {
 
 	public static int superEggDrop(int K, int N) {
-
+		return 0;
 	}
 
 	private static final String INPUT_FILE = "input.txt";

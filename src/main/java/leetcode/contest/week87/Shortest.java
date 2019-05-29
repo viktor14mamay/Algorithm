@@ -8,24 +8,6 @@ import java.util.Scanner;
 
 public class Shortest {
 
-	public static int shortestPathLength(int[][] graph) {
-
-	}
-
-	// A function used by DFS
-	void dfs(int[][] graph, int v,boolean visited[], int visitedLen, int pathLen)
-    {
-        visited[v] = true;
-        System.out.print("visited " + v + " ");
- 
-        for (int vertex:graph[v])
-        {
-            int n = i.next();
-            if (!visited[n])
-                DFSUtil(n, visited);
-        }
-    }
-
 	private static final String INPUT_FILE = "input.txt";
 	private static final String OUTPUT_FILE = "output.txt";
 
@@ -39,7 +21,7 @@ public class Shortest {
 
 				int matrix[][] = readMatrixOneLined(scanner);
 
-				writer.println(shortestPathLength(matrix));
+				writer.println();
 			}
 			scanner.close();
 		}
