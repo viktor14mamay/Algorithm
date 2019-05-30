@@ -1,29 +1,33 @@
 package hackerrank.practice.datastructures;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class LinkedLIst {
 
     static class SinglyLinkedListNode {
-        public int data;
+        int data;
         public SinglyLinkedListNode next;
 
-        public SinglyLinkedListNode(int nodeData) {
+        SinglyLinkedListNode(int nodeData) {
             this.data = nodeData;
             this.next = null;
         }
     }
 
     static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-        public SinglyLinkedListNode tail;
+        SinglyLinkedListNode head;
+        SinglyLinkedListNode tail;
 
-        public SinglyLinkedList() {
+        SinglyLinkedList() {
             this.head = null;
             this.tail = null;
         }
 
-        public void insertNode(int nodeData) {
+        void insertNode(int nodeData) {
             SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
 
             if (this.head == null) {
@@ -33,6 +37,18 @@ public class LinkedLIst {
             }
 
             this.tail = node;
+        }
+    }
+
+    private static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
+        while (node != null) {
+            bufferedWriter.write(String.valueOf(node.data));
+
+            node = node.next;
+
+            if (node != null) {
+                bufferedWriter.write(sep);
+            }
         }
     }
 
@@ -189,15 +205,16 @@ public class LinkedLIst {
     }
 
     static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
-        // TODO
         SinglyLinkedListNode head = null;
         SinglyLinkedListNode current = null;
         while (head1 != null && head2 != null) {
             SinglyLinkedListNode minNode;
             if (head1.data < head2.data) {
                 minNode = head1;
+                head1 = head1.next;
             } else {
                 minNode = head2;
+                head2 = head2.next;
             }
 
             if (head == null) {
@@ -207,8 +224,6 @@ public class LinkedLIst {
                 current.next = minNode;
                 current = minNode;
             }
-            head1 = head1.next;
-            head2 = head2.next;
         }
 
         if (head1 != null) {
@@ -218,6 +233,7 @@ public class LinkedLIst {
                     current = head1;
                 } else {
                     current.next = head1;
+                    current = head1;
                 }
                 head1 = head1.next;
             }
@@ -230,6 +246,7 @@ public class LinkedLIst {
                     current = head2;
                 } else {
                     current.next = head2;
+                    current = head2;
                 }
                 head2 = head2.next;
             }
@@ -239,20 +256,44 @@ public class LinkedLIst {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        SinglyLinkedList llist = new SinglyLinkedList();
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("output_hackerrank.txt")));
 
-        int llistCount = scanner.nextInt();
+        int tests = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        for (int i = 0; i < llistCount; i++) {
-            int llistItem = scanner.nextInt();
+        for (int testsItr = 0; testsItr < tests; testsItr++) {
+            SinglyLinkedList llist1 = new SinglyLinkedList();
+
+            int llist1Count = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            llist.insertNode(llistItem);
+            for (int i = 0; i < llist1Count; i++) {
+                int llist1Item = scanner.nextInt();
+                scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+                llist1.insertNode(llist1Item);
+            }
+
+            SinglyLinkedList llist2 = new SinglyLinkedList();
+
+            int llist2Count = scanner.nextInt();
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+            for (int i = 0; i < llist2Count; i++) {
+                int llist2Item = scanner.nextInt();
+                scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+                llist2.insertNode(llist2Item);
+            }
+
+            SinglyLinkedListNode llist3 = mergeLists(llist1.head, llist2.head);
+
+            printSinglyLinkedList(llist3, " ", bufferedWriter);
+            bufferedWriter.newLine();
         }
 
-        printLinkedList(llist.head);
+        bufferedWriter.close();
 
         scanner.close();
     }
