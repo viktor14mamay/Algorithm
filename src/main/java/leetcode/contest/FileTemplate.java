@@ -68,6 +68,25 @@ public class FileTemplate {
         return res;
     }
 
+    private static int[][] readMatrixWithSize(Scanner scanner, int size) {
+        List<String> lines = new ArrayList<>();
+        while (scanner.hasNextLine()) {
+            lines.add(scanner.nextLine());
+        }
+
+        int res[][] = new int[size][size];
+        for (int k = 0; k < size; k++) {
+            String tokens[] = lines.get(k).replaceAll("]|\\[,", "").split(" ");
+            int len2 = tokens.length;
+            res[k] = new int[len2];
+            for (int m = 0; m < len2; m++) {
+                res[k][m] = Integer.parseInt(tokens[m]);
+            }
+        }
+        System.out.println("Size of matrix is: " + size);
+        return res;
+    }
+
     private static int[][] readMatrixOneLined(Scanner scanner) {
         String lines[] = scanner.nextLine().split("(],)");
         int len = lines.length;

@@ -1,10 +1,9 @@
-package leetcode.contest.practice_easy_1;
+package leetcode.practice.practice_easy_1;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ReverseInteger_7 {
