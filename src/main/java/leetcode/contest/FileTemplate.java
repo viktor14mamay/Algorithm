@@ -20,8 +20,6 @@ public class FileTemplate {
 
         try (PrintWriter writer = new PrintWriter(new FileWriter(new File(OUTPUT_FILE)))) {
             for (int qi = 0; qi < q; qi++) {
-                // TODO
-                //int array[] = readArray(scanner);
 
                 int matrix[][] = readMatrixOneLined(scanner);
 
@@ -43,7 +41,7 @@ public class FileTemplate {
         int len = tokens.length;
         int res[] = new int[len];
         for (int k = 0; k < len; k++) {
-            res[k] = Integer.parseInt(tokens[k]);
+            res[k] = Integer.parseInt(tokens[k].trim());
         }
         System.out.println("Length of array is: " + len);
         return res;
