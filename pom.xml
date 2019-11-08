@@ -8,6 +8,8 @@
     <modules>
         <module>hackerrank</module>
         <module>leetcode</module>
+        <module>princeton</module>
+        <module>stanford</module>
     </modules>
     <packaging>pom</packaging>
 
