@@ -86,7 +86,6 @@ class Graph {
             // Print Strongly connected component of the popped vertex
             if (!visited[v]) {
                 gr.dfs(v, visited);
-                //System.out.println();
             }
             if (gr.componentSize > 3) {
                 compSizes.add(gr.componentSize);
