@@ -1,4 +1,4 @@
-package leetcode.practice.practice_easy_1;
+package practice.easy2;
 
 public class LicenseKey_482 {
     public String licenseKeyFormatting(String S, int K) {

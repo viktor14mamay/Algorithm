@@ -1,4 +1,4 @@
-package leetcode.practice.practice_easy_1;
+package practice.easy2;
 
 import java.util.HashSet;
 

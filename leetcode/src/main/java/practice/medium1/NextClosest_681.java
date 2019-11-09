@@ -1,4 +1,4 @@
-package leetcode.practice.practice_medium_2;
+package practice.medium1;
 
 import java.util.HashSet;
 import java.util.Set;
