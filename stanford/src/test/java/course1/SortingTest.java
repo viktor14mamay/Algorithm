@@ -28,9 +28,9 @@ public class SortingTest {
                 i++;
             }
 
-            helper.printArray(arr);
+            //helper.printArray(arr);
             main.quickSort(arr);
-            helper.printArray(arr);
+            //helper.printArray(arr);
 
             System.out.println("COmpares: " + main.comparesCount);
         } catch (FileNotFoundException e) {
@@ -64,10 +64,3 @@ public class SortingTest {
         helper.printArray(arrArr[1]);
     }
 }
-/**
- 162085
- 164123
- 138382(no)
-
-
- */

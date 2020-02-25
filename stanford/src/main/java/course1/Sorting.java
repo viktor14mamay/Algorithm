@@ -88,7 +88,6 @@ public class Sorting {
     }
 
     private int getIndexForMedianAmong(Integer[] a, int low, int i, int high) {
-        System.out.println("select: " + a[low] + " : " + a[i] + " " + a[high]);
         if (a[low] < a[i]) {
             if (a[i] < a[high]) {
                 return i;

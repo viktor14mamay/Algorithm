@@ -1,4 +1,4 @@
-//package part1.week5.assignment;
+package part1.week5.assignment;
 
 import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.RectHV;
