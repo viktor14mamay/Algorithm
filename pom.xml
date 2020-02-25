@@ -10,6 +10,7 @@
         <module>leetcode</module>
         <module>princeton</module>
         <module>stanford</module>
+        <module>cracking_coding_interview</module>
     </modules>
     <packaging>pom</packaging>
 
